@@ -1,12 +1,11 @@
-const vscode = require("vscode")
+const vscode = require('vscode')
 
-const { writeFile, mkdir } = require("fs/promises")
+const { writeFile, mkdir } = require('fs/promises')
 const { join } = require('path')
 
 const Uri = vscode.Uri
 
 async function copyTemplate(dest) {
-	const workspacePath = vscode.workspace
 	const templateFiles = [
 		'index.html',
 		'style.css',
