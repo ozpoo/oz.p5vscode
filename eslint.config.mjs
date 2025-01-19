@@ -2,6 +2,7 @@ import globals from 'globals'
 
 export default [{
 		files: ['**/*.js'],
+		ignores: ['./template/libraries/**/*.js', './node_modules/**/*.js'],
 		languageOptions: {
 		globals: {
 			...globals.commonjs,
