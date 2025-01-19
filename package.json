@@ -1,0 +1,68 @@
+{
+  "publisher": "oz",
+  "name": "p5",
+  "displayName": "oz.p5",
+  "description": "p5js Development Tools",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.createProject",
+        "title": "p5js: Create Project"
+      },
+      {
+        "command": "extension.installLibrary",
+        "title": "p5js: Install Library"
+      },
+      {
+        "command": "extension.saveAsPNG",
+        "title": "p5js: Save Canvas as PNG"
+      }
+    ],
+    "colorProvider": [
+      {
+        "language": "javascript",
+        "scheme": "file"
+      }
+    ],
+    "configuration": {
+      "title": "Rulers",
+      "properties": {
+        "oz.p5.showRulers": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show rulers and coordinate in the p5js canvas."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test",
+    "update-libraries": "node ./libraries/fetchLibraryData.js",
+    "update-p5": "./update-p5.sh"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.96.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.16.0"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "jshint": "^2.13.6"
+  }
+}

@@ -1,0 +1,85 @@
+html, body {
+  height: 100dvh;
+	width: 100dvw;
+	margin: 0;
+	padding: 0;
+	background-color: var(--vscode-editor-background);
+}
+
+#rulers-toggle {
+	background-color: transparent;
+	color: var(--vscode-statusBar-foreground);
+	padding: 4px 10px;
+	border: none;
+}
+
+#rulers-toggle:hover {
+	background-color: var(--vscode-statusBarItem-hoverBackground);
+	cursor: pointer;
+}
+
+#mouse-position {
+	font-family: monospace;
+	font-size: 0.58rem;
+	background-color: var(--vscode-editor-background);
+	color: var(--vscode-foreground);
+	padding: 5px 6px;
+	border-radius: 12px;
+	transform: translate(12px, 6px);
+	display: none;
+}
+
+#ruler-horizontal {
+  height: 1.6rem;
+}
+
+#ruler-vertical {
+  width: 1.6rem;
+}
+
+canvas {
+  display: block;
+}
+.justify-end {
+	justify-content: end;
+}
+.flex-row {
+	display: flex;
+  flex-direction: row;
+	overflow: visible;
+}
+.flex-col {
+	display: flex;
+  flex-direction: column;
+	overflow: visible;
+}
+.flex-1 {
+	flex: 1;
+}
+.h-full {
+	height: 100%;
+}
+.w-full {
+	width: 100%;
+}
+.w-fit {
+	width: fit-content;
+}
+.absolute {
+	position: absolute;
+}
+.overflow-scroll {
+	overflow: scroll;
+}
+.border-t {
+	border-top: 1px solid var(--vscode-sideBar-border);
+}
+.border-b {
+	border-bottom: 1px solid var(--vscode-sideBar-border);
+}
+.p-2 {
+	padding: 0.4rem;
+}
+.text-sm {
+	font-size: 0.68rem;
+}

@@ -1,0 +1,6 @@
+/.vscode
+/.vscode-test
+/.vscode-test.mjs
+/.vscodeignore
+/node_modules
+/test
