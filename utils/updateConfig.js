@@ -12,7 +12,6 @@ async function updateConfig(context) {
 
 		const jsconfigPath = path.join(workspacePath, 'jsconfig.json')
 
-		// Check if file exists using fs.promises
 		try {
 			await fs.access(jsconfigPath)
 		} catch {
@@ -20,27 +19,21 @@ async function updateConfig(context) {
 			return false
 		}
 
-		// Read file contents
 		const jsconfigContents = await fs.readFile(jsconfigPath, 'utf-8')
 
-		// Construct the version identifier
 		const extensionName = context.extension.id
 		const currentVersion = context.extension.packageJSON.version
 		const currentName = `${extensionName}-${currentVersion}`
 
-		// Create regex pattern for version matching
 		const versionPattern = new RegExp(`${extensionName}-\\d+(\\.\\d+)*`, 'g')
 
-		// Check if the version pattern exists and needs updating
 		if (!versionPattern.test(jsconfigContents)) {
 			console.log('No version pattern found to update')
 			return false
 		}
 
-		// Update the contents
 		const updatedContents = jsconfigContents.replace(versionPattern, currentName)
 
-		// Write the updated contents
 		await fs.writeFile(jsconfigPath, updatedContents)
 
 		console.log(`Successfully updated jsconfig.json with version ${currentVersion}`)

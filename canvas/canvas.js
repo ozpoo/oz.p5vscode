@@ -27,7 +27,7 @@ function initializeCanvas(context) {
 	// statusBarItem2.show()
 
 	let disposableToggleRulers = vscode.commands.registerCommand('extension.toggleRulers', () => {
-		const config = vscode.workspace.getConfiguration('oz.p5')
+		const config = vscode.workspace.getConfiguration('oz.p5vscode')
 		const showRulers = !config.get('showRulers')
 		config.update('showRulers', showRulers, vscode.ConfigurationTarget.Global)
 		if(currentPanel && lastKnownEditor) {
@@ -43,7 +43,7 @@ function initializeCanvas(context) {
 			e.document.uri.path.includes('sketch.js')) {
 			let editor = vscode.window.activeTextEditor
 			if (editor) {
-				const showRulers = vscode.workspace.getConfiguration('oz.p5').get('showRulers')
+				const showRulers = vscode.workspace.getConfiguration('oz.p5vscode').get('showRulers')
 				lastKnownEditor = editor
 				updateCode(lastKnownEditor, outputChannel, currentPanel, lastCodeHash, showRulers)
 			}
@@ -55,7 +55,7 @@ function initializeCanvas(context) {
 			statusBarItem.show()
 			let editor = vscode.window.activeTextEditor
 			if (editor) {
-				const showRulers = vscode.workspace.getConfiguration('oz.p5').get('showRulers')
+				const showRulers = vscode.workspace.getConfiguration('oz.p5vscode').get('showRulers')
 				lastKnownEditor = editor
 				updateCode(lastKnownEditor, outputChannel, currentPanel, lastCodeHash, showRulers)
 			}
@@ -87,7 +87,7 @@ function initializeCanvas(context) {
 			if (editor) {
 				lastKnownEditor = editor
 			}
-			let extensionPath = vscode.Uri.file(vscode.extensions.getExtension('oz.p5').extensionPath)
+			let extensionPath = vscode.Uri.file(vscode.extensions.getExtension('oz.p5vscode').extensionPath)
 			let localPath = vscode.Uri.file(path.dirname(lastKnownEditor.document.uri.path))
 			currentPanel = vscode.window.createWebviewPanel('p5js canvas', 'p5js canvas', vscode.ViewColumn.Two, {
 				enableScripts: true,
@@ -95,7 +95,7 @@ function initializeCanvas(context) {
 			})
 			lastCodeHash = undefined
 			currentPanel.webview.onDidReceiveMessage((e) => handleMessage(e, outputChannel))
-			const showRulers = vscode.workspace.getConfiguration('oz.p5').get('showRulers')
+			const showRulers = vscode.workspace.getConfiguration('oz.p5vscode').get('showRulers')
 			currentPanel.webview.html = getWebviewContent('', currentPanel, lastKnownEditor, showRulers)
 			updateCode(lastKnownEditor, outputChannel, currentPanel, lastCodeHash, showRulers)
 			currentPanel.onDidDispose(() => {

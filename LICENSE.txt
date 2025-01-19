@@ -1,6 +1,6 @@
 ANTI-CAPITALIST LICENSE
 
-Copyright (c) 2020 Sam Lavigne
+Copyright (c) 2020 Eric 'Oz' Andren
 
 This is anti-capitalist software, released for free use by individuals and
 organizations that do not operate by capitalist principles.
@@ -13,7 +13,7 @@ sublicense, and/or sell copies of the Software, and to permit persons to whom
 the Software is furnished to do so, subject to the following conditions:
 
 1. The above copyright notice and this permission notice shall be included in
-all copies of the Software.  2. The User is one of the following: a. An
+all copies of the Software. 2. The User is one of the following: a. An
 individual person b. An organization of people that does not seek profit c. An
 organization of people that seeks shared profit for all its members and does not
 exploit the labor of non-members 3. If the User is an organization with owners,

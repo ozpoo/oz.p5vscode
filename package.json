@@ -1,7 +1,7 @@
 {
   "publisher": "oz",
-  "name": "p5",
-  "displayName": "oz.p5",
+  "name": "p5vscode",
+  "displayName": "oz.p5vscode",
   "description": "p5js Development Tools",
   "version": "0.0.1",
   "engines": {
@@ -38,7 +38,7 @@
     "configuration": {
       "title": "Rulers",
       "properties": {
-        "oz.p5.showRulers": {
+        "oz.p5vscode.showRulers": {
           "type": "boolean",
           "default": true,
           "description": "Show rulers and coordinate in the p5js canvas."

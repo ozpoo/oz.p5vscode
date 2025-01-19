@@ -15,16 +15,13 @@ async function copyTemplate(dest) {
 		join('libraries', 'p5.sound.min.js'),
 	]
 
-	// Create base paths
 	const baseSrc = Uri.joinPath(Uri.file(__dirname), '../template')
 	const baseDest = Uri.file(dest)
 
 	try {
-		// Create destination and libraries directories
 		await mkdir(baseDest.fsPath, { recursive: true })
 		await mkdir(join(baseDest.fsPath, 'libraries'), { recursive: true })
 
-		// Copy all template files
 		await Promise.all(templateFiles.map(async (file) => {
 			const src = Uri.joinPath(baseSrc, file)
 			const dest = Uri.joinPath(baseDest, file)
@@ -35,11 +32,9 @@ async function copyTemplate(dest) {
 				if (error.code !== 'FileExists') {
 					throw error
 				}
-				// Skip if file already exists
 			}
 		}))
 
-		// Create jsconfig.json
 		const jsconfig = {
 			compilerOptions: { target: 'es2020' },
 			include: [
@@ -58,7 +53,7 @@ async function copyTemplate(dest) {
 
 	} catch (error) {
 		console.error('Failed to copy template:', error)
-		throw error // Re-throw to let caller handle the error
+		throw error
 	}
 }
 

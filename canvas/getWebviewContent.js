@@ -10,7 +10,7 @@ function getWebviewContent(code = '', currentPanel, editor, showRulers) {
 		return
 	}
 
-	const extensionPath = currentPanel.webview.asWebviewUri(vscode.Uri.file(vscode.extensions.getExtension('oz.p5').extensionPath))
+	const extensionPath = currentPanel.webview.asWebviewUri(vscode.Uri.file(vscode.extensions.getExtension('oz.p5vscode').extensionPath))
 	const localPath = currentPanel.webview.asWebviewUri(vscode.Uri.file(path.dirname(editor.document.uri.path) + path.sep))
 	code = resolveImports(code)
 
